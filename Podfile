@@ -8,4 +8,10 @@ target 'MukitList' do
   # Pods for MukitList
   pod 'KakaoSDK'
   pod 'NMapsMap'
+  pod 'Alamofire', '~> 5.2'
+  pod 'lottie-ios'
+  pod 'PanModal'
+  pod 'YPImagePicker'
+  pod 'Kingfisher', '~> 6.0'
+
 end

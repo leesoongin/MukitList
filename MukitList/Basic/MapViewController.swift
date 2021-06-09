@@ -23,7 +23,4 @@ class MapViewController: UIViewController {
         
         mapView.moveCamera(NMFCameraUpdate(position: DEFAULT_CAMERA_POSITION))
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
 }

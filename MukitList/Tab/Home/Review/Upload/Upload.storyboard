@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GKe-E2-gzi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Upload View Controller-->
+        <scene sceneID="OVo-rr-apN">
+            <objects>
+                <viewController storyboardIdentifier="Upload" id="GKe-E2-gzi" customClass="UploadViewController" customModule="MukitList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Z1-wB-MeR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6a-ip-QBN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰 등록하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHX-33-AkH">
+                                        <rect key="frame" x="161" y="63.5" width="92.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="dHX-33-AkH" firstAttribute="centerX" secondItem="f6a-ip-QBN" secondAttribute="centerX" id="KGG-p9-YLQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="dHX-33-AkH" secondAttribute="bottom" constant="16" id="KUV-XH-U5x"/>
+                                    <constraint firstAttribute="height" constant="100" id="LUk-VY-BRV"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E4n-ZV-ZWS">
+                                <rect key="frame" x="87" y="178" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E4n-ZV-ZWS" secondAttribute="height" multiplier="1:1" id="K4i-kN-RLG"/>
+                                    <constraint firstAttribute="width" constant="240" id="Vl4-n3-5lp"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PM5-I5-Low">
+                                <rect key="frame" x="16" y="450" width="382" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰 작성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJQ-06-NWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DO6-vG-vuR">
+                                        <rect key="frame" x="0.0" y="55" width="382" height="145"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="F2d-xm-PTb"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRI-D2-q8q">
+                                <rect key="frame" x="16" y="682" width="382" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="리뷰 작성">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadReview:" destination="GKe-E2-gzi" eventType="touchUpInside" id="SGB-Uh-9RY"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="XmJ-mE-Fh3">
+                                <rect key="frame" x="16" y="116" width="382" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96X-Pb-ce9">
+                                        <rect key="frame" x="0.0" y="0.0" width="70.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-4B-I39">
+                                        <rect key="frame" x="330" y="0.0" width="52" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="등록하기">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectPicture:" destination="GKe-E2-gzi" eventType="touchUpInside" id="dFJ-nM-R9a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GdS-6e-iYc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="GdS-6e-iYc" firstAttribute="trailing" secondItem="XmJ-mE-Fh3" secondAttribute="trailing" constant="16" id="1cH-rB-r4u"/>
+                            <constraint firstItem="E4n-ZV-ZWS" firstAttribute="top" secondItem="XmJ-mE-Fh3" secondAttribute="bottom" constant="32" id="2cu-oa-hVK"/>
+                            <constraint firstItem="E4n-ZV-ZWS" firstAttribute="centerX" secondItem="4Z1-wB-MeR" secondAttribute="centerX" id="2xk-IK-Cie"/>
+                            <constraint firstItem="PM5-I5-Low" firstAttribute="top" secondItem="E4n-ZV-ZWS" secondAttribute="bottom" constant="32" id="5ai-wu-ByU"/>
+                            <constraint firstItem="XmJ-mE-Fh3" firstAttribute="leading" secondItem="GdS-6e-iYc" secondAttribute="leading" constant="16" id="Lpg-fI-T0n"/>
+                            <constraint firstItem="PM5-I5-Low" firstAttribute="centerX" secondItem="4Z1-wB-MeR" secondAttribute="centerX" id="Pln-Q3-zKB"/>
+                            <constraint firstItem="kRI-D2-q8q" firstAttribute="leading" secondItem="GdS-6e-iYc" secondAttribute="leading" constant="16" id="WtH-gX-Ece"/>
+                            <constraint firstItem="GdS-6e-iYc" firstAttribute="trailing" secondItem="PM5-I5-Low" secondAttribute="trailing" constant="16" id="Zb7-sU-HWo"/>
+                            <constraint firstItem="f6a-ip-QBN" firstAttribute="top" secondItem="4Z1-wB-MeR" secondAttribute="top" id="bq4-he-DWp"/>
+                            <constraint firstItem="XmJ-mE-Fh3" firstAttribute="top" secondItem="f6a-ip-QBN" secondAttribute="bottom" constant="16" id="dQq-bc-dci"/>
+                            <constraint firstItem="GdS-6e-iYc" firstAttribute="trailing" secondItem="f6a-ip-QBN" secondAttribute="trailing" id="gFy-XL-UBx"/>
+                            <constraint firstItem="GdS-6e-iYc" firstAttribute="trailing" secondItem="kRI-D2-q8q" secondAttribute="trailing" constant="16" id="kV2-hw-s3x"/>
+                            <constraint firstItem="kRI-D2-q8q" firstAttribute="top" secondItem="PM5-I5-Low" secondAttribute="bottom" constant="32" id="pwx-hh-3Kk"/>
+                            <constraint firstItem="PM5-I5-Low" firstAttribute="leading" secondItem="GdS-6e-iYc" secondAttribute="leading" constant="16" id="xPf-Nk-SiO"/>
+                            <constraint firstItem="f6a-ip-QBN" firstAttribute="leading" secondItem="GdS-6e-iYc" secondAttribute="leading" id="y1O-OT-M08"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NMl-81-qHU" appends="YES" id="ni7-J7-5MQ"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="headView" destination="f6a-ip-QBN" id="2CK-fC-ZpJ"/>
+                        <outlet property="imageView" destination="E4n-ZV-ZWS" id="Enp-G9-xFt"/>
+                        <outlet property="textView" destination="DO6-vG-vuR" id="srG-sD-EDh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5t-le-8NY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NMl-81-qHU">
+                    <connections>
+                        <action selector="tabGesture:" destination="GKe-E2-gzi" id="6Tk-7L-9tP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="55" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

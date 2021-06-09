@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2CD-ec-ZD1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="YyG-0a-2mz">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="2CD-ec-ZD1" customClass="HomeViewController" customModule="MukitList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NtK-gB-7wa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3J-nk-Ekh" customClass="NMFNaverMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOb-H0-hcG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛집을 찾아보자!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa7-ZM-eTL">
+                                        <rect key="frame" x="150.5" y="63.5" width="113" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-JM-hvW">
+                                        <rect key="frame" x="363" y="62" width="35" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <state key="normal" title="오디?">
+                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nearBySearch:" destination="2CD-ec-ZD1" eventType="touchUpInside" id="iVu-A8-IvI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SZe-JM-hvW" secondAttribute="trailing" constant="16" id="MkB-Xi-ltH"/>
+                                    <constraint firstAttribute="bottom" secondItem="SZe-JM-hvW" secondAttribute="bottom" constant="8" id="VvT-Ej-v9i"/>
+                                    <constraint firstAttribute="height" constant="100" id="YjO-8I-7dQ"/>
+                                    <constraint firstItem="Sa7-ZM-eTL" firstAttribute="centerX" secondItem="fOb-H0-hcG" secondAttribute="centerX" id="aRl-Fn-QTK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sa7-ZM-eTL" secondAttribute="bottom" constant="16" id="n8o-JF-xh1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WHz-6L-fpJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fOb-H0-hcG" firstAttribute="trailing" secondItem="WHz-6L-fpJ" secondAttribute="trailing" id="2q3-Hu-vhW"/>
+                            <constraint firstItem="G3J-nk-Ekh" firstAttribute="leading" secondItem="WHz-6L-fpJ" secondAttribute="leading" id="H3U-0T-oDp"/>
+                            <constraint firstItem="fOb-H0-hcG" firstAttribute="leading" secondItem="WHz-6L-fpJ" secondAttribute="leading" id="HNc-pu-Yf1"/>
+                            <constraint firstItem="WHz-6L-fpJ" firstAttribute="bottom" secondItem="G3J-nk-Ekh" secondAttribute="bottom" id="fbl-ay-pZ7"/>
+                            <constraint firstItem="fOb-H0-hcG" firstAttribute="top" secondItem="NtK-gB-7wa" secondAttribute="top" id="kfo-2n-rNe"/>
+                            <constraint firstItem="G3J-nk-Ekh" firstAttribute="top" secondItem="NtK-gB-7wa" secondAttribute="top" id="vUT-Sy-NC0"/>
+                            <constraint firstItem="WHz-6L-fpJ" firstAttribute="trailing" secondItem="G3J-nk-Ekh" secondAttribute="trailing" id="vdu-eF-nc3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="pencil.circle" catalog="system" selectedImage="pencil.circle.fill" id="Rnn-ut-o0F"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="headView" destination="fOb-H0-hcG" id="Z1H-aj-UOV"/>
+                        <outlet property="naverMapView" destination="G3J-nk-Ekh" id="gW7-bF-bf6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MhO-Gc-FEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392.75362318840581" y="-208.25892857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

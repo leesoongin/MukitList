@@ -1,13 +1,13 @@
 //
-//  TabBarViewController.swift
+//  MukitListViewController.swift
 //  MukitList
 //
-//  Created by 이숭인 on 2021/01/31.
+//  Created by 이숭인 on 2021/03/30.
 //
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class MukitListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

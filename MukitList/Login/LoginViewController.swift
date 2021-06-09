@@ -8,34 +8,45 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import Lottie
 
 class LoginViewController: UIViewController {
-
+    let loginManager = LoginManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("loginViewContoller 나옴")
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-       
+        let animationView = AnimationView(name:"LogoAnimation")
+        
+        view.backgroundColor =  #colorLiteral(red: 0.9384295344, green: 0.9403647184, blue: 0.7551119924, alpha: 1)
+        view.addSubview(animationView)
+        animationView.frame = CGRect(x: 0, y: 0, width: 250, height: 250) // 애니메이션뷰의 크기 설정
+        animationView.center = self.view.center // 애니메이션뷰의 위치설정
+        animationView.contentMode = .scaleAspectFit
+        animationView.animationSpeed = 1.0
+        animationView.loopMode = .loop
+        //애니메이션 재생(애니메이션 재생모드 미 설정시 1회)
+        animationView.play()
     }
     
     @IBAction func login(_ sender: Any) {
-        AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
             if let error = error {
                 print(error)
             }
             else {
-                //TODO: 서버로 id 등 데이터 전송
-                //TODO: Master로 이동
+                self.loginManager.login(access_token: oauthToken!.accessToken) { response in
+                    print("response --> \(response)")
+                    ServiceAccessTokenManager().setServiceToken(serviceToken: response)
+                }
                 self.moveToMainController()
-                print("tlfgod")
             }
         }
     }
-   
+  
+    
     func moveToMainController() {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+        let storyboard = UIStoryboard(name: "Master", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
         vc?.modalPresentationStyle = .fullScreen
         self.present(vc!, animated: false, completion: nil)
